@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Austin Law Consult & Justice Point
 
-## Getting Started
+**Professional Legal Consultancy & Justice Advocacy Portal — Kathmandu, Nepal**
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🏛️ About the Firm
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Austin Law Consult & Justice Point** is a professional legal consultancy profile dedicated to upholding the rule of law and providing comprehensive legal insights in Nepal. Founded on the principles of professional integrity, transparency, and deep legal expertise, we serve as a vital resource for individuals and corporate entities navigating the complex regulatory framework of Nepal.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Managed by **Ram KC**, our firm brings over **20+ years of legal experience** to the forefront, ensuring that every client receives factual, strategic, and objective representation.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚖️ Our Practice Areas
 
-## Learn More
+We provide specialized legal information and consultancy in several key sectors, including:
 
-To learn more about Next.js, take a look at the following resources:
+- **Corporate & Business Law**: Company registration (OCR), compliance, and commercial litigation.
+- **Real Estate & Property Law**: Land registration (Malpot), title searches, and property disputes.
+- **Family & Civil Law**: Marriage, divorce, inheritance, and personal legal matters.
+- **Intellectual Property**: Trademark registration and IP protection in Nepal.
+- **Criminal Defense**: Strategic advocacy and objective representation in legal proceedings.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Portal Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This digital portal is designed to provide seamless access to legal knowledge:
 
-## Deploy on Vercel
+- **100% Bilingual Support**: Full English and Nepali localization for maximum accessibility.
+- **Legal Knowledge Hub**: A comprehensive searchable database of practice areas and legal updates.
+- **Interactive Assistant**: A rule-based chatbot to provide instant procedural information.
+- **Procedural FAQs**: Quick guides on common legal processes in Nepal.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📍 Contact Information
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Location**: Jyatha, Kantipath, Kathmandu, Nepal
+- **Managing Director**: Ram KC
+- **Email**: ramkc@example.com
+- **Website**: [Visit our Portal](https://austin-law-consult.vercel.app) *(Link to be updated upon final deployment)*
+
+---
+
+### 📜 Legal Disclaimer
+*This repository and its associated portal are maintained for informational purposes only. The content provided does not constitute formal legal advice. For specific legal matters, please request a formal consultation through our official channels.*
+
+---
+
+© 2026 Austin Law Consult & Justice Point. All Rights Reserved. (Private Codebase)
