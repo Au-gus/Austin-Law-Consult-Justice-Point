@@ -41,16 +41,16 @@ export const translations = {
     about_feat4: "Objective Representation",
     
     // Practice Areas Section
-    practice_title: "Our Practice Areas",
-    practice_desc: "We provide highly specialized legal services tailored to meet the unique challenges of our diverse clientele in Nepal.",
+    practice_title: "Practice Areas",
+    practice_desc: "We provide specialized legal consultancy tailored to meet the professional requirements of our diverse clientele in Nepal.",
     
     // Attorneys Section
     attorneys_title: "Meet the Attorneys",
     attorneys_desc: "A dedicated team of legal professionals at Austin Law Consult & Justice Point, committed to delivering justice and excellence for every client.",
     
     // Blog Section
-    blog_title: "From Our Blog",
-    blog_desc: "Expert commentary, legal updates, and practical advice from the attorneys at Austin Law Consult & Justice Point.",
+    blog_title: "Legal Insights",
+    blog_desc: "Professional commentary, legal updates, and practical resources from the team at Austin Law Consult & Justice Point.",
     
     // Contact Section
     contact_title: "Request a Free Consultation",
@@ -270,8 +270,8 @@ export const translations = {
     contact_sat: "शनिबार: बन्द",
     
     // Footer Extra
-    footer_desc: "नेपालभर विशेष कानूनी सेवाहरू प्रदान गर्ने एक प्रमुख कर्पोरेट र व्यावसायिक कानून फर्म हो। हामी सक्रिय, नवीन र रणनीतिक समाधानहरू प्रदान गर्न समर्पित छौं।",
-    footer_disclaimer_long: "यस वेबसाइटमा प्रदान गरिएको सामग्रीले विज्ञापन, अनुरोध वा कानूनी सल्लाह गठन गर्दैन। यो प्रोफाइल पहुँच गर्दा वकील-ग्राहक सम्बन्ध सिर्जना हुँदैन। आगन्तुकहरूलाई विशिष्ट कानूनी मामिलाहरूको लागि औपचारिक कानूनी सल्लाह लिन अनुरोध गरिन्छ।",
+    footer_desc: "is a professional consultancy profiling specialized legal resources across Nepal. We are dedicated to providing proactive and strategic information based on the rule of law.",
+    footer_disclaimer_long: "The content provided on this informational portal does not constitute an advertisement, solicitation, or binding legal advice. Accessing this profile does not create a lawyer-client relationship. Visitors are requested to seek formal authorized counsel for specific legal matters. Professional consultancy is provided in strict accordance with the Nepal Bar Council act and regulations.",
     footer_privacy: "गोपनीयता नीति",
     footer_terms: "सेवाका सर्तहरू",
     

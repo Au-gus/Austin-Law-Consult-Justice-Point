@@ -15,10 +15,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL('https://austinlaw.com.np'),
   title: {
-    default: "Austin Law Consult & Justice Point | Premier Law Firm in Nepal",
+    default: "Austin Law Consult & Justice Point | Legal Information Portal Nepal",
     template: "%s | Austin Law Consult & Justice Point"
   },
-  description: "Austin Law Consult & Justice Point provides expert corporate, criminal, and commercial legal services in Kathmandu, Nepal. Led by Senior Advocate Shyam Raja Karki.",
+  description: "Austin Law Consult & Justice Point provides professional legal consultancy and informational resources in Kathmandu, Nepal. Led by Senior Advocate Shyam Raja Karki.",
   keywords: [
     "Austin Law Consult", "Justice Point Nepal", "Law Firm in Kathmandu", 
     "Shyam Raja Karki Lawyer", "Legal Consultancy Nepal", "Corporate Law Nepal", 
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Austin Law Consult & Justice Point",
-    description: "Expert Legal Services in Nepal. Independence and Integrity in every case.",
+    description: "Professional Legal Consultancy & Information in Nepal. Independence and Integrity in every case.",
     url: "https://austinlaw.com.np",
     siteName: "Austin Law Consult & Justice Point",
     locale: "en_NP",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Austin Law Consult & Justice Point",
-    description: "Expert Legal Services in Nepal. Led by Senior Advocate Shyam Raja Karki.",
+    description: "Professional Legal Consultancy in Nepal. Led by Senior Advocate Shyam Raja Karki.",
   },
   robots: {
     index: true,
