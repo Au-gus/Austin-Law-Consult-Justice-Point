@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { ArrowRight, Landmark, ShieldCheck, Scale, Award } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import React, { useState, useEffect } from "react";
 
 import PracticeAreas from "@/components/PracticeAreas";
 import AboutUs from "@/components/AboutUs";
@@ -15,6 +16,20 @@ import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
   const { t } = useLanguage();
+  const [showScroll, setShowScroll] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setShowScroll(false);
+      } else {
+        setShowScroll(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -97,10 +112,19 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden md:flex flex-col items-center animate-bounce text-white/50">
-          <span className="text-xs uppercase tracking-[0.2em] mb-2 font-semibold">{t("hero_scroll")}</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
-        </div>
+        <AnimatePresence>
+          {showScroll && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden md:flex flex-col items-center animate-bounce text-white/50"
+            >
+              <span className="text-xs uppercase tracking-[0.2em] mb-2 font-semibold">{t("hero_scroll")}</span>
+              <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* Feature Highlights Banner */}
