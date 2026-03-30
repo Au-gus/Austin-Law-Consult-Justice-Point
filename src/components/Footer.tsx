@@ -18,15 +18,15 @@ export default function Footer() {
               <Scale className="h-8 w-8 text-accent-gold" />
               <div className="flex flex-col">
                 <span className="heading-serif font-bold text-xl leading-none text-white">
-                  AUSTIN
+                  {t("nav_logo_main").split(' ')[0]}
                 </span>
                 <span className="text-[0.65rem] tracking-[0.12em] font-medium text-gray-400">
-                  LAW CONSULT & JUSTICE POINT
+                  {t("nav_logo_main").split(' ').slice(1).join(' ')} {t("nav_tagline").split(' ').slice(2).join(' ')}
                 </span>
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
-              {t("nav_tagline")} is a premier corporate and commercial law firm providing specialized legal services across Nepal. We are dedicated to delivering proactive, innovative, and strategic solutions.
+              <span className="text-white font-bold">{t("nav_tagline")}</span> {t("footer_desc")}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent-gold hover:text-white transition-colors duration-300 text-sm font-bold uppercase tracking-wider">
@@ -75,18 +75,11 @@ export default function Footer() {
               {t("footer_practice_areas")}
             </h3>
             <ul className="space-y-3">
-              {[
-                { name: "Corporate Law", slug: "corporate-law" },
-                { name: "Criminal Defense", slug: "criminal-defense" },
-                { name: "Family & Divorce", slug: "family-divorce" },
-                { name: "Real Estate Law", slug: "real-estate-law" },
-                { name: "Banking & Finance", slug: "banking-finance" },
-                { name: "Intellectual Property", slug: "intellectual-property" },
-              ].map((area) => (
+              {practiceAreasData.map((area) => (
                 <li key={area.slug}>
                   <Link href={`/practice-areas/${area.slug}`} className="flex items-center text-gray-400 hover:text-accent-gold transition-colors text-sm group">
                     <ChevronRight className="h-4 w-4 mr-2 text-accent-gold/50 group-hover:text-accent-gold" />
-                    {area.name}
+                    {area.title[language]}
                   </Link>
                 </li>
               ))}
@@ -103,8 +96,8 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-accent-gold mr-3 mt-0.5 shrink-0" />
                 <span className="text-sm text-gray-400">
-                  Jyatha, Kantipath<br />
-                  Kathmandu, Nepal
+                  {t("contact_address").split(', ').slice(0, 2).join(', ')}<br />
+                  {t("contact_address").split(', ').slice(2).join(', ')}
                 </span>
               </li>
               <li className="flex items-center">
@@ -122,8 +115,8 @@ export default function Footer() {
               <li className="flex items-start">
                 <Clock className="h-5 w-5 text-accent-gold mr-3 mt-0.5 shrink-0" />
                 <span className="text-sm text-gray-400">
-                  Sun - Fri: 9:00 AM - 6:00 PM<br />
-                  Saturday: Closed
+                  {t("contact_hours")}<br />
+                  {t("contact_sat")}
                 </span>
               </li>
             </ul>
@@ -137,17 +130,15 @@ export default function Footer() {
             <p className="text-[10px] md:text-xs text-gray-500 text-center leading-relaxed uppercase tracking-wider">
               <span className="font-bold text-accent-gold block mb-2 underline decoration-accent-gold/30 underline-offset-4">{t("footer_disclaimer_title")}</span>
               {t("footer_disclaimer_text")}
-              The content provided on this website does not constitute an advertisement, solicitation, or legal advice. 
-              Accessing this profile does not create a lawyer-client relationship. Visitors are requested to seek 
-              formal legal counsel for specific legal matters.
+              {t("footer_disclaimer_long")}
             </p>
           </div>
           
           <div className="mt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[10px] text-gray-500 uppercase tracking-widest">
             <p>&copy; {new Date().getFullYear()} {t("nav_tagline")}. All rights reserved.</p>
             <div className="flex space-x-6">
-              <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link href="#" className="hover:text-white transition-colors">{t("footer_privacy")}</Link>
+              <Link href="#" className="hover:text-white transition-colors">{t("footer_terms")}</Link>
             </div>
           </div>
         </div>

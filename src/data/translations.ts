@@ -108,6 +108,21 @@ export const translations = {
     footer_disclaimer_title: "Legal Notice & Disclaimer",
     footer_disclaimer_text: "This profile is maintained for informational purposes only in accordance with the Code of Conduct for Legal Practitioners in Nepal.",
     back_to_practice: "Back to Practice Areas",
+    
+    // Contact Info (Localized)
+    contact_address: "Jyatha, Kantipath, Kathmandu, Nepal",
+    contact_hours: "Sun - Fri: 9:00 AM - 6:00 PM",
+    contact_sat: "Saturday: Closed",
+    
+    // Footer Extra
+    footer_desc: "is a premier corporate and commercial law firm providing specialized legal services across Nepal. We are dedicated to delivering proactive, innovative, and strategic solutions.",
+    footer_disclaimer_long: "The content provided on this website does not constitute an advertisement, solicitation, or legal advice. Accessing this profile does not create a lawyer-client relationship. Visitors are requested to seek formal legal counsel for specific legal matters.",
+    footer_privacy: "Privacy Policy",
+    footer_terms: "Terms of Service",
+    
+    // Navbar Extra
+    nav_logo_main: "AUSTIN LAW",
+    nav_search_portal: "Search Portal",
   },
   ne: {
     // Navbar
@@ -218,5 +233,20 @@ export const translations = {
     footer_disclaimer_title: "कानूनी सूचना र अस्वीकरण",
     footer_disclaimer_text: "यो प्रोफाइल नेपालका कानूनी व्यवसायीहरूको आचारसंहिता अनुसार जानकारीमूलक उद्देश्यका लागि मात्र राखिएको हो।",
     back_to_practice: "कार्यक्षेत्रमा फर्कनुहोस्",
+    
+    // Contact Info (Localized)
+    contact_address: "ज्याठा, कान्तिपथ, काठमाडौं, नेपाल",
+    contact_hours: "आइतबार - शुक्रबार: बिहान ९:०० - साँझ ६:००",
+    contact_sat: "शनिबार: बन्द",
+    
+    // Footer Extra
+    footer_desc: "नेपालभर विशेष कानूनी सेवाहरू प्रदान गर्ने एक प्रमुख कर्पोरेट र व्यावसायिक कानून फर्म हो। हामी सक्रिय, नवीन र रणनीतिक समाधानहरू प्रदान गर्न समर्पित छौं।",
+    footer_disclaimer_long: "यस वेबसाइटमा प्रदान गरिएको सामग्रीले विज्ञापन, अनुरोध वा कानूनी सल्लाह गठन गर्दैन। यो प्रोफाइल पहुँच गर्दा वकील-ग्राहक सम्बन्ध सिर्जना हुँदैन। आगन्तुकहरूलाई विशिष्ट कानूनी मामिलाहरूको लागि औपचारिक कानूनी सल्लाह लिन अनुरोध गरिन्छ।",
+    footer_privacy: "गोपनीयता नीति",
+    footer_terms: "सेवाका सर्तहरू",
+    
+    // Navbar Extra
+    nav_logo_main: "अस्टिन ल",
+    nav_search_portal: "पोर्टल खोज्नुहोस्",
   }
 };
