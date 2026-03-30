@@ -96,7 +96,7 @@ export default function Contact() {
                     type="email"
                     id="email"
                     className="w-full bg-white/5 border border-white/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-gold transition-all"
-                    placeholder="ramkc@"
+                    placeholder="ramkc@example.com"
                   />
                 </div>
               </div>

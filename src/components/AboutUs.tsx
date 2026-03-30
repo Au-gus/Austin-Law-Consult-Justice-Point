@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle2, Scale } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function AboutUs() {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="py-24 bg-white dark:bg-dark-neutral border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,7 +29,6 @@ export default function AboutUs() {
                   <path d="M50 300 H350 V320 H50 Z" fill="#D4AF37"/>
                   <path d="M50 400 H350 V420 H50 Z" fill="#D4AF37"/>
                   <path d="M50 500 H350 V520 H50 Z" fill="#D4AF37"/>
-                  {/* Vertical book spines */}
                   {[...Array(12)].map((_, i) => (
                     <rect key={i} x={60 + (i * 25)} y={120} width={20} height={80} rx="2" fill={i % 3 === 0 ? "#D4AF37" : "#FFFFFF"} opacity={0.3 + (i % 5 * 0.1)}/>
                   ))}
@@ -38,7 +40,7 @@ export default function AboutUs() {
               <div className="relative z-10 flex flex-col items-center text-center px-12">
                 <Scale className="h-24 w-24 text-accent-gold/40 mb-6" />
                 <h4 className="heading-serif text-3xl font-bold text-white/60 mb-4">Integrity in Practice</h4>
-                <p className="text-white/40 text-sm uppercase tracking-[0.2em]">Austin Law Consult</p>
+                <p className="text-white/40 text-sm uppercase tracking-[0.2em]">Austin Law Consult & Justice Point</p>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </div>
@@ -66,20 +68,20 @@ export default function AboutUs() {
           >
             <div>
               <span className="text-accent-gold font-bold tracking-widest uppercase text-sm mb-4 inline-block">
-                Firm Profile
+                {t("about_badge")}
               </span>
               <h2 className="heading-serif text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                Professional Integrity & Legal Insight.
+                {t("about_title")}
               </h2>
               <div className="w-24 h-1 bg-accent-gold mb-8"></div>
             </div>
 
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-              Austin Law Consult & Justice Point serves as a professional consultancy profile dedicated to upholding the rule of law in Nepal. We provide objective legal information and professional consultancy while maintaining rigorous standards of legal ethics.
+              {t("about_desc1")}
             </p>
 
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-              Our profile is built on the foundation of professional transparency and a deep understanding of the prevailing laws and regulatory framework of Nepal.
+              {t("about_desc2")}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-6">
@@ -103,7 +105,7 @@ export default function AboutUs() {
                 </svg>
               </div>
               <div>
-                <h5 className="font-bold heading-serif text-xl text-gray-900 dark:text-white">Shyam Raja Karki</h5>
+                <h5 className="font-bold heading-serif text-xl text-gray-900 dark:text-white">Ram KC</h5>
                 <p className="text-accent-gold text-sm font-semibold uppercase tracking-wider">Managing Director — 20+ Yrs Experience</p>
               </div>
             </div>

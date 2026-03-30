@@ -32,6 +32,7 @@ export const metadata: Metadata = {
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export default function RootLayout({
   children,
@@ -45,11 +46,13 @@ export default function RootLayout({
       style={{ scrollBehavior: 'smooth' }}
     >
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground dark:bg-primary-navy">
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+        <LanguageProvider>
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );
