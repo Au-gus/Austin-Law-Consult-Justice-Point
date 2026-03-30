@@ -14,6 +14,16 @@ export const translations = {
     hero_cta_inquiry: "Contact for Inquiry",
     hero_cta_info: "Practice Information",
     
+    // Features
+    feat_rep: "Professional Representation",
+    feat_rep_desc: "Core consultancy across legal sectors in Nepal.",
+    feat_ethics: "Ethical Standards",
+    feat_ethics_desc: "Committed to the legal code of conduct and transparency.",
+    feat_client: "Client Focused",
+    feat_client_desc: "Providing objective legal information and dedicated support.",
+    feat_profile: "Documented Experience",
+    feat_profile_desc: "Over 20 years of documented legal experience in Nepal.",
+
     // About
     about_badge: "Firm Profile",
     about_title: "Professional Integrity & Legal Insight.",
@@ -114,6 +124,16 @@ export const translations = {
     hero_cta_inquiry: "सोधपुछको लागि सम्पर्क",
     hero_cta_info: "अभ्यास जानकारी",
     
+    // Features
+    feat_rep: "व्यावसायिक प्रतिनिधित्व",
+    feat_rep_desc: "नेपालका कानूनी क्षेत्रहरूमा मुख्य परामर्श सेवा।",
+    feat_ethics: "नैतिक मापदण्ड",
+    feat_ethics_desc: "कानूनी आचारसंहिता र पारदर्शिताप्रति प्रतिबद्ध।",
+    feat_client: "ग्राहक केन्द्रित",
+    feat_client_desc: "वस्तुनिष्ठ कानूनी जानकारी र समर्पित समर्थन प्रदान गर्दै।",
+    feat_profile: "प्रमाणित अनुभव",
+    feat_profile_desc: "नेपालमा २० वर्षभन्दा बढीको प्रमाणित कानूनी अनुभव।",
+
     // About
     about_badge: "फर्म प्रोफाइल",
     about_title: "व्यावसायिक अखण्डता र कानूनी अन्तर्दृष्टि।",

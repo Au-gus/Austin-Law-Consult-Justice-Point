@@ -108,10 +108,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12">
             {[
-              { icon: Landmark, title: t("feat_rep"), desc: "Core consultancy across legal sectors." },
-              { icon: ShieldCheck, title: t("feat_ethics"), desc: "Committed to the legal code of conduct." },
-              { icon: Scale, title: t("feat_client"), desc: "Providing objective legal information." },
-              { icon: Award, title: t("feat_profile"), desc: "Documented legal experience in Nepal." }
+              { icon: Landmark, title: t("feat_rep"), desc: t("feat_rep_desc") },
+              { icon: ShieldCheck, title: t("feat_ethics"), desc: t("feat_ethics_desc") },
+              { icon: Scale, title: t("feat_client"), desc: t("feat_client_desc") },
+              { icon: Award, title: t("feat_profile"), desc: t("feat_profile_desc") }
             ].map((feature, i) => (
               <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left">
                 <div className="h-12 w-12 rounded-lg bg-primary-navy/5 text-primary-navy dark:bg-white/5 dark:text-accent-gold flex items-center justify-center mb-4">
