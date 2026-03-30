@@ -13,21 +13,91 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Austin Law Consult & Justice Point | Premier Law Firm in Nepal",
-  description: "Austin Law Consult & Justice Point provides expert corporate, criminal, and commercial legal services in Kathmandu, Nepal. Driven by independence and integrity.",
-  keywords: ["Law Firm Nepal", "Corporate Law Kathmandu", "Criminal Defense Nepal", "Austin Law Consult & Justice Point", "Legal Services Nepal", "Best Lawyers Kathmandu"],
+  metadataBase: new URL('https://austinlaw.com.np'),
+  title: {
+    default: "Austin Law Consult & Justice Point | Premier Law Firm in Nepal",
+    template: "%s | Austin Law Consult & Justice Point"
+  },
+  description: "Austin Law Consult & Justice Point provides expert corporate, criminal, and commercial legal services in Kathmandu, Nepal. Led by Senior Advocate Shyam Raja Karki.",
+  keywords: [
+    "Austin Law Consult", "Justice Point Nepal", "Law Firm in Kathmandu", 
+    "Shyam Raja Karki Lawyer", "Legal Consultancy Nepal", "Corporate Law Nepal", 
+    "Criminal Defense Nepal", "Divorce Lawyer Nepal", "Real Estate Law Nepal"
+  ],
+  authors: [{ name: "Shyam Raja Karki" }],
+  creator: "Austin Law Consult",
+  publisher: "Austin Law Consult & Justice Point",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     title: "Austin Law Consult & Justice Point",
-    description: "Expert Legal Services in Nepal. Our independence makes the difference.",
+    description: "Expert Legal Services in Nepal. Independence and Integrity in every case.",
     url: "https://austinlaw.com.np",
     siteName: "Austin Law Consult & Justice Point",
     locale: "en_NP",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Austin Law Consult & Justice Point",
+    description: "Expert Legal Services in Nepal. Led by Senior Advocate Shyam Raja Karki.",
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en',
+      'ne-NP': '/ne',
+    },
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Austin Law Consult & Justice Point",
+  "image": "https://austinlaw.com.np/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jyatha, Kantipath",
+    "addressLocality": "Kathmandu",
+    "addressRegion": "Bagmati",
+    "postalCode": "44600",
+    "addressCountry": "NP"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "27.7088",
+    "longitude": "85.3135"
+  },
+  "url": "https://austinlaw.com.np",
+  "telephone": "+9779841356979",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sunday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Shyam Raja Karki",
+    "jobTitle": "Managing Director"
+  }
 };
 
 import Navbar from "@/components/Navbar";
@@ -45,6 +115,12 @@ export default function RootLayout({
       className={`${playfair.variable} ${montserrat.variable} h-full antialiased`}
       style={{ scrollBehavior: 'smooth' }}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground dark:bg-primary-navy">
         <LanguageProvider>
           <Navbar />
