@@ -8,7 +8,7 @@
 
 **Austin Law Consult & Justice Point** is a professional legal consultancy profile dedicated to upholding the rule of law and providing comprehensive legal insights in Nepal. Founded on the principles of professional integrity, transparency, and deep legal expertise, we serve as a vital resource for individuals and corporate entities navigating the complex regulatory framework of Nepal.
 
-Managed by **Ram KC**, our firm brings over **20+ years of legal experience** to the forefront, ensuring that every client receives factual, strategic, and objective representation.
+Managed by **Shyam Raja Karki**, our firm brings over **20+ years of legal experience** to the forefront, ensuring that every client receives factual, strategic, and objective representation.
 
 ## ⚖️ Our Practice Areas
 
@@ -32,8 +32,8 @@ This digital portal is designed to provide seamless access to legal knowledge:
 ## 📍 Contact Information
 
 - **Location**: Jyatha, Kantipath, Kathmandu, Nepal
-- **Managing Director**: Ram KC
-- **Email**: ramkc@example.com
+- **Managing Director**: Shyam Raja Karki
+- **Email**: karkishyam613@gmail.com
 - **Website**: [Visit our Portal](https://austin-law-consult.vercel.app) *(Link to be updated upon final deployment)*
 
 ---

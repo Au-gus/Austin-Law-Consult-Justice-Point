@@ -59,8 +59,8 @@ export const translations = {
     form_submit: "Submit Inquiry",
     
     // Placeholders
-    ph_name: "Ram KC",
-    ph_email: "ramkc@example.com",
+    ph_name: "Shyam Raja Karki",
+    ph_email: "karkishyam613@gmail.com",
     ph_phone: "+977 98...",
     ph_service: "Select a service...",
     ph_details: "Please briefly describe your legal matter...",
@@ -159,8 +159,8 @@ export const translations = {
     form_submit: "सोधपुछ बुझाउनुहोस्",
     
     // Placeholders
-    ph_name: "राम के.सी.",
-    ph_email: "ramkc@example.com",
+    ph_name: "श्याम राजा कार्की",
+    ph_email: "karkishyam613@gmail.com",
     ph_phone: "+९७७ ९८...",
     ph_service: "सेवा छान्नुहोस्...",
     ph_details: "कृपया तपाईंको कानूनी विषय संक्षिप्तमा वर्णन गर्नुहोस्...",

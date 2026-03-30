@@ -103,7 +103,7 @@ export default function AboutUs() {
                 </svg>
               </div>
               <div>
-                <h5 className="font-bold heading-serif text-xl text-gray-900 dark:text-white">Ram KC</h5>
+                <h5 className="font-bold heading-serif text-xl text-gray-900 dark:text-white">Shyam Raja Karki</h5>
                 <p className="text-accent-gold text-sm font-semibold uppercase tracking-wider">{t("about_director_role")}</p>
               </div>
             </div>
