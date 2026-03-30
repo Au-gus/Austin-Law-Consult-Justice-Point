@@ -72,7 +72,7 @@ export default function Attorneys() {
       name: t("attorney_team_member"),
       role: t("attorney_investigator"),
       tag: t("attorney_investigator"),
-      tagColor: "bg-slate-700 text-white",
+      tagColor: "bg-red-700 text-white",
       phone: "",
       email: "",
       bio: {
