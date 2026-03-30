@@ -24,7 +24,7 @@ export default function Attorneys() {
       name: t("attorney_name_withheld"),
       role: t("attorney_junior"),
       tag: t("attorney_junior"),
-      tagColor: "bg-primary-navy text-white",
+      tagColor: "bg-indigo-600 text-white",
       phone: "",
       email: "",
       bio: {
@@ -36,7 +36,7 @@ export default function Attorneys() {
       name: t("attorney_name_withheld"),
       role: t("attorney_junior"),
       tag: t("attorney_junior"),
-      tagColor: "bg-primary-navy text-white",
+      tagColor: "bg-indigo-600 text-white",
       phone: "",
       email: "",
       bio: {
@@ -48,7 +48,7 @@ export default function Attorneys() {
       name: t("attorney_team_member"),
       role: t("attorney_assistant"),
       tag: t("attorney_assistant"),
-      tagColor: "bg-gray-600 text-white",
+      tagColor: "bg-teal-600 text-white",
       phone: "",
       email: "",
       bio: {
@@ -60,7 +60,7 @@ export default function Attorneys() {
       name: t("attorney_team_member"),
       role: t("attorney_assistant"),
       tag: t("attorney_assistant"),
-      tagColor: "bg-gray-600 text-white",
+      tagColor: "bg-teal-600 text-white",
       phone: "",
       email: "",
       bio: {
@@ -127,7 +127,7 @@ export default function Attorneys() {
                     {t("attorney_photo_private")}
                   </p>
                 </div>
-                <span className={`absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm ${person.tagColor}`}>
+                <span className={`absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm shadow-sm ${person.tagColor}`}>
                   {person.tag}
                 </span>
               </div>
