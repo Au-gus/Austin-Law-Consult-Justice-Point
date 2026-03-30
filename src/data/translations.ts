@@ -13,6 +13,8 @@ export const translations = {
     hero_tagline: "Providing comprehensive legal consultancy and professional information across diverse practice areas in Nepal.",
     hero_cta_inquiry: "Contact for Inquiry",
     hero_cta_info: "Practice Information",
+    hero_title_1: "Austin Law Consult",
+    hero_title_2: "& Justice Point.",
     
     // Features
     feat_rep: "Professional Representation",
@@ -123,6 +125,11 @@ export const translations = {
     // Navbar Extra
     nav_logo_main: "AUSTIN LAW",
     nav_search_portal: "Search Portal",
+    attorney_photo_private: "Photo Private",
+    attorney_senior: "Senior Advocate",
+    attorney_junior: "Junior Advocate",
+    attorney_md: "Managing Director",
+    attorney_name_withheld: "Advocate (Name Withheld)",
   },
   ne: {
     // Navbar
@@ -138,6 +145,8 @@ export const translations = {
     hero_tagline: "नेपालका विभिन्न अभ्यास क्षेत्रहरूमा व्यापक कानूनी परामर्श र व्यावसायिक जानकारी प्रदान गर्दै।",
     hero_cta_inquiry: "सोधपुछको लागि सम्पर्क",
     hero_cta_info: "अभ्यास जानकारी",
+    hero_title_1: "अस्टिन ल कन्सल्ट",
+    hero_title_2: "र जस्टिस पोइन्ट।",
     
     // Features
     feat_rep: "व्यावसायिक प्रतिनिधित्व",
@@ -248,5 +257,10 @@ export const translations = {
     // Navbar Extra
     nav_logo_main: "अस्टिन ल",
     nav_search_portal: "पोर्टल खोज्नुहोस्",
+    attorney_photo_private: "तस्विर गोप्य",
+    attorney_senior: "वरिष्ठ अधिवक्ता",
+    attorney_junior: "कनिष्ठ अधिवक्ता",
+    attorney_md: "प्रबन्ध निर्देशक",
+    attorney_name_withheld: "अधिवक्ता (नाम गोप्य)",
   }
 };

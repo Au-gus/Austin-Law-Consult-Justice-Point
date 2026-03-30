@@ -4,48 +4,47 @@ import { motion } from "framer-motion";
 import { UserCircle2, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
-const attorneys = [
-  {
-    name: "Shyam Raja Karki",
-    role: "Managing Director",
-    tag: "Senior Advocate",
-    tagColor: "bg-accent-gold text-white",
-    phone: "+977 9841356979",
-    email: "karkishyam613@gmail.com",
-    bio: {
-      en: "Over 20 years of distinguished legal practice in corporate, criminal, and civil law across Nepal.",
-      ne: "नेपालका कर्पोरेट, फौजदारी र देवानी कानूनमा २० वर्षभन्दा बढीको विशिष्ट कानूनी अभ्यास।"
-    }
-  },
-  {
-    name: "Advocate (Name Withheld)",
-    role: "Junior Advocate",
-    tag: "Junior Advocate",
-    tagColor: "bg-primary-navy text-white",
-    phone: "",
-    email: "",
-    bio: {
-      en: "Specializes in family law and civil litigation with a client-first approach.",
-      ne: "ग्राहक-प्रथम दृष्टिकोणको साथ पारिवारिक कानून र देवानी मुद्दाहरूमा विशेषज्ञता।"
-    }
-  },
-  {
-    name: "Advocate (Name Withheld)",
-    role: "Junior Advocate",
-    tag: "Junior Advocate",
-    tagColor: "bg-primary-navy text-white",
-    phone: "",
-    email: "",
-    bio: {
-      en: "Focused on criminal defense and constitutional matters with strong courtroom presence.",
-      ne: "बलियो इजलास उपस्थितिको साथ फौजदारी रक्षा र संवैधानिक मामिलाहरूमा केन्द्रित।"
-    }
-  },
-  // Simplified for focus
-];
-
 export default function Attorneys() {
   const { t, language } = useLanguage();
+
+  const attorneys = [
+    {
+      name: language === 'en' ? "Shyam Raja Karki" : "श्याम राजा कार्की",
+      role: t("attorney_md"),
+      tag: t("attorney_senior"),
+      tagColor: "bg-accent-gold text-white",
+      phone: "+977 9841356979",
+      email: "karkishyam613@gmail.com",
+      bio: {
+        en: "Over 20 years of distinguished legal practice in corporate, criminal, and civil law across Nepal.",
+        ne: "नेपालका कर्पोरेट, फौजदारी र देवानी कानूनमा २० वर्षभन्दा बढीको विशिष्ट कानूनी अभ्यास।"
+      }
+    },
+    {
+      name: t("attorney_name_withheld"),
+      role: t("attorney_junior"),
+      tag: t("attorney_junior"),
+      tagColor: "bg-primary-navy text-white",
+      phone: "",
+      email: "",
+      bio: {
+        en: "Specializes in family law and civil litigation with a client-first approach.",
+        ne: "ग्राहक-प्रथम दृष्टिकोणको साथ पारिवारिक कानून र देवानी मुद्दाहरूमा विशेषज्ञता।"
+      }
+    },
+    {
+      name: t("attorney_name_withheld"),
+      role: t("attorney_junior"),
+      tag: t("attorney_junior"),
+      tagColor: "bg-primary-navy text-white",
+      phone: "",
+      email: "",
+      bio: {
+        en: "Focused on criminal defense and constitutional matters with strong courtroom presence.",
+        ne: "बलियो इजलास उपस्थितिको साथ फौजदारी रक्षा र संवैधानिक मामिलाहरूमा केन्द्रित।"
+      }
+    },
+  ];
 
   return (
     <section id="attorneys" className="py-24 bg-gray-50 dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
@@ -89,7 +88,7 @@ export default function Attorneys() {
                     <UserCircle2 className="h-16 w-16 text-white/40" />
                   </div>
                   <p className="text-white/30 text-xs uppercase tracking-widest font-semibold">
-                    Photo Private
+                    {t("attorney_photo_private")}
                   </p>
                 </div>
                 <span className={`absolute bottom-4 left-4 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-sm ${person.tagColor}`}>
@@ -104,8 +103,8 @@ export default function Attorneys() {
                 <p className="text-sm font-semibold text-accent-gold uppercase tracking-wider">
                   {person.role}
                 </p>
-                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                  {person.bio[language]}
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed min-h-[4.5rem]">
+                  {person.bio[language as keyof typeof person.bio]}
                 </p>
 
                 {(person.phone || person.email) && (

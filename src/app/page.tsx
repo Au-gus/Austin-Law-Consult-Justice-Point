@@ -69,9 +69,9 @@ export default function Home() {
             </div>
             
             <h1 className="heading-serif text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
-              Austin Law Consult <br />
+              {t("hero_title_1")} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-gold to-yellow-200">
-                &amp; Justice Point.
+                {t("hero_title_2")}
               </span>
             </h1>
             
