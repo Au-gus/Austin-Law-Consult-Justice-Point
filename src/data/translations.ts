@@ -15,6 +15,7 @@ export const translations = {
     hero_cta_info: "Practice Information",
     hero_title_1: "Austin Law Consult",
     hero_title_2: "& Justice Point.",
+    hero_scroll: "Scroll",
     
     // Features
     feat_rep: "Professional Representation",
@@ -147,6 +148,7 @@ export const translations = {
     hero_cta_info: "अभ्यास जानकारी",
     hero_title_1: "अस्टिन ल कन्सल्ट",
     hero_title_2: "र जस्टिस पोइन्ट।",
+    hero_scroll: "तल सार्नुहोस्",
     
     // Features
     feat_rep: "व्यावसायिक प्रतिनिधित्व",
