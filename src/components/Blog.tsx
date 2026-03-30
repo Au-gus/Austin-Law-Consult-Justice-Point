@@ -9,7 +9,8 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function Blog() {
   const { t, language } = useLanguage();
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<any[]>([]);
+  const [isEditorOpen, setIsEditorOpen] = useState(false);
 
   useEffect(() => {
     const fetchPosts = async () => {

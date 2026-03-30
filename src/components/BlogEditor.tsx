@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { X, Lock, PenLine, CheckCircle2, AlertCircle } from "lucide-react";
+import { X, Lock, PenLine, AlertCircle } from "lucide-react";
 import { addBlogPost } from "@/app/actions/blogActions";
 
 interface BlogEditorProps {
@@ -16,16 +16,17 @@ export default function BlogEditor({ onPostAdded, onClose }: BlogEditorProps) {
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Form Fields
+  // Form Fields (Bilingual)
   const [formData, setFormData] = useState({
-    title: "",
-    excerpt: "",
+    title: { en: "", ne: "" },
+    excerpt: { en: "", ne: "" },
     category: "Corporate Law",
     author: "Shyam Raja Karki",
   });
 
   const handleAuth = (e: React.FormEvent) => {
     e.preventDefault();
+    // In a real app, this would be a more secure session, but using the user's provided logic
     if (password === "Austin@Law2026") {
       setStep("form");
       setError("");
@@ -40,13 +41,11 @@ export default function BlogEditor({ onPostAdded, onClose }: BlogEditorProps) {
     setError("");
 
     try {
-      // Call Server Action
       const result = await addBlogPost(formData, password);
-      
       onPostAdded(result);
       onClose();
     } catch (err: any) {
-      setError(err.message || "Failed to add post. Please check your connection.");
+      setError(err.message || "Failed to add post.");
     } finally {
       setIsSubmitting(false);
     }
@@ -62,14 +61,14 @@ export default function BlogEditor({ onPostAdded, onClose }: BlogEditorProps) {
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="bg-white dark:bg-gray-900 w-full max-w-lg rounded-sm shadow-2xl relative overflow-hidden"
+        className="bg-white dark:bg-gray-900 w-full max-w-2xl rounded-sm shadow-2xl relative overflow-hidden"
       >
         {/* Header */}
         <div className="bg-accent-gold p-6 flex justify-between items-center">
           <div className="flex items-center space-x-3 text-white">
             <PenLine className="h-6 w-6" />
             <h3 className="font-bold heading-serif text-xl uppercase tracking-wider">
-              {step === "auth" ? "Admin Access" : "Write New Post"}
+              {step === "auth" ? "Admin Access" : "Write Bilingual Post"}
             </h3>
           </div>
           <button onClick={onClose} className="text-white/80 hover:text-white transition-colors">
@@ -77,7 +76,7 @@ export default function BlogEditor({ onPostAdded, onClose }: BlogEditorProps) {
           </button>
         </div>
 
-        <div className="p-8">
+        <div className="p-8 max-h-[80vh] overflow-y-auto custom-scrollbar">
           <AnimatePresence mode="wait">
             {step === "auth" ? (
               <motion.form
@@ -92,32 +91,18 @@ export default function BlogEditor({ onPostAdded, onClose }: BlogEditorProps) {
                   <div className="mx-auto h-12 w-12 rounded-full bg-accent-gold/10 flex items-center justify-center">
                     <Lock className="h-6 w-6 text-accent-gold" />
                   </div>
-                  <p className="text-gray-500 text-sm">Please enter the administrative password to continue.</p>
+                  <p className="text-gray-500 text-sm">Enter administrative password to proceed.</p>
                 </div>
-
-                <div className="space-y-2">
-                  <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter password..."
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:outline-none focus:border-accent-gold transition-all"
-                    autoFocus
-                  />
-                  {error && (
-                    <div className="flex items-center space-x-2 text-red-500 text-xs font-semibold mt-2">
-                      <AlertCircle className="h-3 w-3" />
-                      <span>{error}</span>
-                    </div>
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-primary-navy dark:bg-accent-gold text-white font-bold py-4 rounded-sm hover:translate-y-[-2px] transition-all shadow-lg active:scale-95"
-                >
-                  Verify Identity
-                </button>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:outline-none focus:border-accent-gold transition-all"
+                  placeholder="Password..."
+                  autoFocus
+                />
+                {error && <p className="text-red-500 text-xs font-bold">{error}</p>}
+                <button type="submit" className="w-full bg-primary-navy text-white font-bold py-4 rounded-sm">Verify Identity</button>
               </motion.form>
             ) : (
               <motion.form
@@ -126,26 +111,35 @@ export default function BlogEditor({ onPostAdded, onClose }: BlogEditorProps) {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 onSubmit={handleSubmit}
-                className="space-y-5"
+                className="space-y-6"
               >
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Post Title</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.title}
-                    onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:outline-none focus:border-accent-gold transition-all"
-                    placeholder="e.g. New Legal Reforms in Nepal"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Title (English)</label>
+                    <input
+                      required
+                      value={formData.title.en}
+                      onChange={(e) => setFormData({ ...formData, title: { ...formData.title, en: e.target.value } })}
+                      className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:border-accent-gold transition-all"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Title (Nepali)</label>
+                    <input
+                      required
+                      value={formData.title.ne}
+                      onChange={(e) => setFormData({ ...formData, title: { ...formData.title, ne: e.target.value } })}
+                      className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:border-accent-gold transition-all"
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Category</label>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Category</label>
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:outline-none focus:border-accent-gold transition-all appearance-none"
+                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:border-accent-gold transition-all"
                   >
                     <option>Corporate Law</option>
                     <option>Criminal Law</option>
@@ -154,24 +148,35 @@ export default function BlogEditor({ onPostAdded, onClose }: BlogEditorProps) {
                   </select>
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Summary (Excerpt)</label>
-                  <textarea
-                    required
-                    rows={3}
-                    value={formData.excerpt}
-                    onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
-                    className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:outline-none focus:border-accent-gold transition-all resize-none"
-                    placeholder="A brief summary of the article..."
-                  />
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Excerpt (English)</label>
+                    <textarea
+                      required
+                      rows={2}
+                      value={formData.excerpt.en}
+                      onChange={(e) => setFormData({ ...formData, excerpt: { ...formData.excerpt, en: e.target.value } })}
+                      className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:border-accent-gold transition-all resize-none"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Excerpt (Nepali)</label>
+                    <textarea
+                      required
+                      rows={2}
+                      value={formData.excerpt.ne}
+                      onChange={(e) => setFormData({ ...formData, excerpt: { ...formData.excerpt, ne: e.target.value } })}
+                      className="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:border-accent-gold transition-all resize-none"
+                    />
+                  </div>
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-accent-gold text-white font-bold py-4 rounded-sm hover:translate-y-[-2px] transition-all shadow-lg active:scale-95 disabled:opacity-50 disabled:translate-y-0"
+                  className="w-full bg-accent-gold text-white font-bold py-4 rounded-sm hover:-translate-y-1 transition-all shadow-lg active:scale-95 disabled:opacity-50"
                 >
-                  {isSubmitting ? "Publishing..." : "Publish Article"}
+                  {isSubmitting ? "Publishing..." : "Publish Bilingual Article"}
                 </button>
               </motion.form>
             )}
