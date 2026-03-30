@@ -14,7 +14,7 @@ const initialPosts = [
     date: "March 25, 2026",
     readTime: "6 min read",
     category: "Corporate Law",
-    author: "Shyam Raja Karki",
+    author: "Ram KC",
   },
   {
     title: "Your Rights During a Criminal Investigation",
@@ -23,7 +23,7 @@ const initialPosts = [
     date: "March 18, 2026",
     readTime: "5 min read",
     category: "Criminal Law",
-    author: "Austin Law Consult",
+    author: "Austin Law Consult & Justice Point",
   },
   {
     title: "Property Disputes in Nepal: How to Protect Your Interests",
@@ -32,7 +32,7 @@ const initialPosts = [
     date: "March 10, 2026",
     readTime: "7 min read",
     category: "Real Estate Law",
-    author: "Austin Law Consult",
+    author: "Austin Law Consult & Justice Point",
   },
 ];
 
@@ -47,7 +47,6 @@ export default function Blog() {
   const [posts, setPosts] = useState(initialPosts);
   const [isEditorOpen, setIsEditorOpen] = useState(false);
 
-  // Persistence: Fetch from Server Action on mount
   useEffect(() => {
     const fetchPosts = async () => {
       const serverPosts = await getBlogPosts();
@@ -86,7 +85,7 @@ export default function Blog() {
           <div className="w-24 h-1 bg-accent-gold mx-auto mb-6" />
           <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
             Expert commentary, legal updates, and practical advice from the
-            attorneys at Austin Law Consult &amp; Justice Point.
+            attorneys at Austin Law Consult & Justice Point.
           </p>
         </motion.div>
 
@@ -103,11 +102,9 @@ export default function Blog() {
             >
               {/* Stylized Placeholder Header */}
               <div className="h-48 bg-primary-navy relative flex items-center justify-center overflow-hidden">
-                {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-[0.05]" 
                      style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "20px 20px" }} />
                 
-                {/* Icon Placeholder */}
                 <div className="relative z-10 flex flex-col items-center">
                   <div className="h-16 w-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-3">
                     <Scale className="h-8 w-8 text-accent-gold/40" />
@@ -115,12 +112,10 @@ export default function Blog() {
                   <span className="text-white/30 text-[0.6rem] uppercase tracking-[0.3em] font-bold">Privacy Placeholder</span>
                 </div>
 
-                {/* Accent line at bottom of image area */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent-gold/30" />
               </div>
 
               <div className="p-7 flex flex-col flex-1 space-y-4">
-                {/* Category badge */}
                 <div className="flex items-center space-x-2">
                   <Tag className="h-3.5 w-3.5 text-accent-gold" />
                   <span
@@ -133,17 +128,14 @@ export default function Blog() {
                   </span>
                 </div>
 
-                {/* Title */}
                 <h3 className="heading-serif text-xl font-bold text-gray-900 dark:text-white group-hover:text-accent-gold transition-colors leading-snug">
                   {post.title}
                 </h3>
 
-                {/* Excerpt */}
                 <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed flex-1 line-clamp-3">
                   {post.excerpt}
                 </p>
 
-                {/* Meta row */}
                 <div className="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500 pt-4 border-t border-gray-100 dark:border-gray-700">
                   <div className="flex items-center space-x-3">
                     <span className="flex items-center space-x-1">
@@ -160,7 +152,6 @@ export default function Blog() {
                   </span>
                 </div>
 
-                {/* Read more */}
                 <button className="inline-flex items-center text-accent-gold font-bold text-sm hover:underline mt-1 group/btn w-fit">
                   Read Article
                   <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
@@ -170,7 +161,6 @@ export default function Blog() {
           ))}
         </div>
 
-        {/* Write Post Button (Admin) */}
         <div className="mt-16 flex justify-center">
           <button
             onClick={() => setIsEditorOpen(true)}
@@ -184,7 +174,6 @@ export default function Blog() {
 
       </div>
 
-      {/* Editor Modal */}
       <AnimatePresence>
         {isEditorOpen && (
           <BlogEditor

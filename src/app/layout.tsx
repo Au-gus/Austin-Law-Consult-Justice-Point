@@ -15,12 +15,12 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Austin Law Consult & Justice Point | Premier Law Firm in Nepal",
   description: "Austin Law Consult & Justice Point provides expert corporate, criminal, and commercial legal services in Kathmandu, Nepal. Driven by independence and integrity.",
-  keywords: ["Law Firm Nepal", "Corporate Law Kathmandu", "Criminal Defense Nepal", "Austin Law Consult", "Legal Services Nepal", "Best Lawyers Kathmandu"],
+  keywords: ["Law Firm Nepal", "Corporate Law Kathmandu", "Criminal Defense Nepal", "Austin Law Consult & Justice Point", "Legal Services Nepal", "Best Lawyers Kathmandu"],
   openGraph: {
     title: "Austin Law Consult & Justice Point",
     description: "Expert Legal Services in Nepal. Our independence makes the difference.",
     url: "https://austinlaw.com.np",
-    siteName: "Austin Law Consult",
+    siteName: "Austin Law Consult & Justice Point",
     locale: "en_NP",
     type: "website",
   },

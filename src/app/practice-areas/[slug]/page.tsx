@@ -1,25 +1,19 @@
-"use client";
-
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { ArrowLeft, CheckCircle2, Scale, ShieldCheck, Landmark, Printer } from "lucide-react";
+import { CheckCircle2, Scale, ShieldCheck, Landmark } from "lucide-react";
 import { practiceAreasData } from "@/data/practiceAreasData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import PrintButton from "@/components/PrintButton";
 import React from "react";
 
-export default function PracticeAreaDetail({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function PracticeAreaDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const practice = practiceAreasData.find((p) => p.slug === slug);
 
   if (!practice) {
     notFound();
   }
-
-  const handlePrint = () => {
-    if (typeof window !== 'undefined') window.print();
-  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -42,13 +36,7 @@ export default function PracticeAreaDetail({ params }: { params: { slug: string 
                 {practice.description}
               </p>
             </div>
-            <button 
-              onClick={handlePrint}
-              className="flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-accent-gold text-gray-600 dark:text-gray-300 rounded shadow-sm transition-all group no-print"
-            >
-              <Printer className="h-4 w-4 group-hover:text-accent-gold" />
-              <span className="font-bold text-xs uppercase tracking-widest">Download Factsheet</span>
-            </button>
+            <PrintButton />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">

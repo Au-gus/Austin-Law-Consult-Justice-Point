@@ -81,7 +81,7 @@ export default function Attorneys() {
           </h2>
           <div className="w-24 h-1 bg-accent-gold mx-auto mb-6" />
           <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
-            A dedicated team of legal professionals committed to delivering justice and excellence for every client.
+            A dedicated team of legal professionals at Austin Law Consult & Justice Point, committed to delivering justice and excellence for every client.
           </p>
         </motion.div>
 

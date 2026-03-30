@@ -15,8 +15,8 @@ export default function Footer() {
                 <span className="heading-serif font-bold text-xl leading-none text-white">
                   AUSTIN
                 </span>
-                <span className="text-[0.65rem] tracking-[0.15em] font-medium text-gray-400">
-                  LAW CONSULT
+                <span className="text-[0.65rem] tracking-[0.12em] font-medium text-gray-400">
+                  LAW CONSULT & JUSTICE POINT
                 </span>
               </div>
             </Link>
