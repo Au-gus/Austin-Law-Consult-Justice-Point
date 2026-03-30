@@ -44,7 +44,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       type: 'blog',
       title: p.title[language],
       description: p.excerpt[language],
-      link: `/#blog-post-${p.id || p.date}`,
+      link: `/#blog-post-${p.date.replace(/\s/g, "-").toLowerCase()}`,
       icon: FileText
     }));
 
