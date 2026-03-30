@@ -111,6 +111,13 @@ export const translations = {
     footer_disclaimer_title: "Legal Notice & Disclaimer",
     footer_disclaimer_text: "This profile is maintained for informational purposes only in accordance with the Code of Conduct for Legal Practitioners in Nepal.",
     back_to_practice: "Back to Practice Areas",
+    practice_factsheet: "Practice Area Factsheet: ",
+    practice_aspects: "Key Consultancy Aspects",
+    practice_standards: "Professional Standards",
+    practice_standards_desc: "At Austin Law Consult & Justice Point, we provide consultancy in {title} matters with a focus on objective legal analysis and structural compliance.",
+    practice_regulatory: "Regulatory Context",
+    practice_precedent: "Legal Precedent",
+    practice_conduct: "Consultancy is conducted in alignment with the prevailing laws of Nepal.",
     
     // Contact Info (Localized)
     contact_address: "Jyatha, Kantipath, Kathmandu, Nepal",
@@ -247,6 +254,13 @@ export const translations = {
     footer_disclaimer_title: "कानूनी सूचना र अस्वीकरण",
     footer_disclaimer_text: "यो प्रोफाइल नेपालका कानूनी व्यवसायीहरूको आचारसंहिता अनुसार जानकारीमूलक उद्देश्यका लागि मात्र राखिएको हो।",
     back_to_practice: "कार्यक्षेत्रमा फर्कनुहोस्",
+    practice_factsheet: "कार्यक्षेत्र तथ्यपत्र: ",
+    practice_aspects: "मुख्य परामर्श पक्षहरू",
+    practice_standards: "व्यावसायिक मापदण्ड",
+    practice_standards_desc: "अस्टिन ल कन्सल्ट र जस्टिस पोइन्टमा, हामी वस्तुनिष्ठ कानूनी विश्लेषण र संरचनात्मक अनुपालनमा ध्यान केन्द्रित गर्दै {title} मामिलाहरूमा परामर्श प्रदान गर्दछौं।",
+    practice_regulatory: "नियामक सन्दर्भ",
+    practice_precedent: "कानूनी नजीर",
+    practice_conduct: "नेपालको प्रचलित कानून अनुसार परामर्श सञ्चालन गरिन्छ।",
     
     // Contact Info (Localized)
     contact_address: "ज्याठा, कान्तिपथ, काठमाडौं, नेपाल",
