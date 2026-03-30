@@ -34,6 +34,10 @@ const botResponses: Record<string, Record<string, string>> = {
     en: "You're very welcome! Is there anything else you'd like to know about our legal firm?",
     ne: "तपाईंलाई धेरै स्वागत छ! हाम्रो कानूनी फर्मको बारेमा अरू केही जान्न चाहनुहुन्छ?"
   },
+  "ok": {
+    en: "Understood. Please let me know if you have any other questions regarding our legal services.",
+    ne: "हस्, बुझें। हाम्रा कानूनी सेवाहरूको बारेमा अन्य केही प्रश्नहरू भएमा कृपया सोध्नुहोला।"
+  },
   "default": {
     en: "I don't have that information. You should contact the office directly for detailed inquiries.",
     ne: "मलाई त्यो जानकारी छैन। विस्तृत सोधपुछका लागि तपाईंले सिधै कार्यालयमा सम्पर्क गर्नुपर्छ।"
@@ -79,6 +83,8 @@ export default function Chatbot() {
         responseKey = "price";
       } else if (q.includes("thank") || q.includes("thx") || q.includes("धन्यवाद")) {
         responseKey = "thanks";
+      } else if (q === "ok" || q === "okay" || q === "okey" || q === "हुन्छ" || q === "ठिक छ") {
+        responseKey = "ok";
       }
 
       setMessages(prev => [...prev, { 

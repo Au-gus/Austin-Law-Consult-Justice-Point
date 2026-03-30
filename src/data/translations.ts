@@ -106,6 +106,7 @@ export const translations = {
     btn_learn_more: "Learn More",
     btn_read_article: "Read Article",
     btn_write_article: "Write New Article",
+    btn_download_factsheet: "Download Factsheet",
     
     // Misc
     footer_disclaimer_title: "Legal Notice & Disclaimer",
@@ -249,6 +250,7 @@ export const translations = {
     btn_learn_more: "थप जाननुहोस्",
     btn_read_article: "लेख पढ्नुहोस्",
     btn_write_article: "नयाँ लेख लेख्नुहोस्",
+    btn_download_factsheet: "तथ्यपत्र डाउनलोड गर्नुहोस्",
     
     // Misc
     footer_disclaimer_title: "कानूनी सूचना र अस्वीकरण",
