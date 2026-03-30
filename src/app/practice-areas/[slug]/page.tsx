@@ -10,9 +10,9 @@ import PrintButton from "@/components/PrintButton";
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
-export default function PracticeAreaDetail({ params }: { params: { slug: string } }) {
+export default function PracticeAreaDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { t, language } = useLanguage();
-  const { slug } = params;
+  const { slug } = React.use(params);
   const practice = practiceAreasData.find((p) => p.slug === slug);
 
   if (!practice) {
