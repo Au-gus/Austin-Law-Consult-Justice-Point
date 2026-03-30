@@ -1,26 +1,44 @@
 [
   {
-    "title": "Understanding Corporate Law in Nepal: A Practical Guide",
-    "excerpt": "Nepal's corporate legal framework has evolved significantly over the last decade. This guide walks business owners through key regulations and best practices.",
+    "title": {
+      "en": "Understanding Corporate Law in Nepal: A Practical Guide",
+      "ne": "नेपालमा कर्पोरेट कानून बुझ्न: एक व्यावहारिक गाईड"
+    },
+    "excerpt": {
+      "en": "Nepal's corporate legal framework has evolved significantly over the last decade. This guide walks business owners through key regulations.",
+      "ne": "नेपालको कर्पोरेट कानूनी रूपरेखा पछिल्लो दशकमा उल्लेखनीय रूपमा विकसित भएको छ।"
+    },
     "date": "March 25, 2026",
     "readTime": "6 min read",
     "category": "Corporate Law",
-    "author": "Shyam Raja Karki"
+    "author": "Ram KC"
   },
   {
-    "title": "Your Rights During a Criminal Investigation",
-    "excerpt": "Being questioned by authorities can be overwhelming. Knowing your fundamental rights under Nepali law can make a critical difference in the outcome.",
+    "title": {
+      "en": "Your Rights During a Criminal Investigation",
+      "ne": "फौजदारी अनुसन्धानको क्रममा तपाईंको अधिकारहरू"
+    },
+    "excerpt": {
+      "en": "Being questioned by authorities can be overwhelming. Knowing your fundamental rights under Nepali law can make a critical difference.",
+      "ne": "अधिकारीहरूले सोधपुछ गर्दा तपाईंलाई डर लाग्न सक्छ। नेपाली कानून अन्तर्गत आफ्ना मौलिक अधिकारहरू जान्नु महत्त्वपूर्ण हुन्छ।"
+    },
     "date": "March 18, 2026",
     "readTime": "5 min read",
     "category": "Criminal Law",
-    "author": "Austin Law Consult"
+    "author": "Austin Law Consult & Justice Point"
   },
   {
-    "title": "Property Disputes in Nepal: How to Protect Your Interests",
-    "excerpt": "Land and property disputes are among the most common civil cases in Nepal. We explore the legal channels available to you.",
+    "title": {
+      "en": "Property Disputes in Nepal: How to Protect Your Interests",
+      "ne": "नेपालमा सम्पत्ति विवाद: आफ्नो हित कसरी रक्षा गर्ने"
+    },
+    "excerpt": {
+      "en": "Land and property disputes are among the most common civil cases in Nepal. We explore the legal channels available to you.",
+      "ne": "नेपालमा जग्गा र सम्पत्ति विवादहरू सबैभन्दा सामान्य देवानी मुद्दाहरू हुन्।"
+    },
     "date": "March 10, 2026",
     "readTime": "7 min read",
     "category": "Real Estate Law",
-    "author": "Austin Law Consult"
+    "author": "Austin Law Consult & Justice Point"
   }
 ]

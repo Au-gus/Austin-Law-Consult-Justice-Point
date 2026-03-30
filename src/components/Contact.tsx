@@ -2,11 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="py-24 bg-primary-navy text-white relative overflow-hidden">
-      {/* Background elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-accent-gold/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
       
@@ -20,26 +22,25 @@ export default function Contact() {
             transition={{ duration: 0.5 }}
           >
             <span className="text-accent-gold font-bold tracking-widest uppercase text-sm mb-4 inline-block">
-              Get in Touch
+              {t("nav_contact")}
             </span>
             <h2 className="heading-serif text-4xl md:text-5xl font-bold mb-6">
-              Request a Free Consultation
+              {t("contact_title")}
             </h2>
             <div className="w-24 h-1 bg-accent-gold mx-auto mb-6"></div>
             <p className="text-gray-300 text-lg">
-              We are ready to listen. Please fill out the form below or contact us directly to schedule a strictly confidential discussion about your legal needs.
+              {t("contact_desc")}
             </p>
           </motion.div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 bg-white/5 p-8 md:p-12 rounded-sm border border-white/10 backdrop-blur-md shadow-2xl">
           
-          {/* Contact Information */}
           <div className="lg:col-span-2 space-y-10">
             <div>
-              <h3 className="text-2xl font-bold heading-serif mb-6 text-accent-gold">Direct Contact</h3>
+              <h3 className="text-2xl font-bold heading-serif mb-6 text-accent-gold">{t("contact_direct_title")}</h3>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                Our team is available to assist you. If you have any urgent matters, please use the direct phone line provided below.
+                {t("contact_direct_desc")}
               </p>
             </div>
 
@@ -49,7 +50,7 @@ export default function Contact() {
                   <Phone className="h-5 w-5 text-accent-gold group-hover:text-primary-navy transition-colors" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 mb-1">Phone</h4>
+                  <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 mb-1">{t("form_phone")}</h4>
                   <p className="font-medium hover:text-accent-gold transition-colors">+977 9841356979</p>
                 </div>
               </div>
@@ -59,7 +60,7 @@ export default function Contact() {
                   <Mail className="h-5 w-5 text-accent-gold group-hover:text-primary-navy transition-colors" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 mb-1">Email</h4>
+                  <h4 className="font-bold text-sm uppercase tracking-wider text-gray-400 mb-1">{t("form_email")}</h4>
                   <p className="font-medium hover:text-accent-gold transition-colors">karkishyam613@gmail.com</p>
                 </div>
               </div>
@@ -77,48 +78,47 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Form */}
           <div className="lg:col-span-3">
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-semibold tracking-wider uppercase text-gray-300">Full Name</label>
+                  <label htmlFor="name" className="text-sm font-semibold tracking-wider uppercase text-gray-300">{t("form_name")}</label>
                   <input
                     type="text"
                     id="name"
                     className="w-full bg-white/5 border border-white/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-gold transition-all"
-                    placeholder="Ram KC"
+                    placeholder={t("ph_name")}
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-semibold tracking-wider uppercase text-gray-300">Email Address</label>
+                  <label htmlFor="email" className="text-sm font-semibold tracking-wider uppercase text-gray-300">{t("form_email")}</label>
                   <input
                     type="email"
                     id="email"
                     className="w-full bg-white/5 border border-white/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-gold transition-all"
-                    placeholder="ramkc@example.com"
+                    placeholder={t("ph_email")}
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-semibold tracking-wider uppercase text-gray-300">Phone Number</label>
+                  <label htmlFor="phone" className="text-sm font-semibold tracking-wider uppercase text-gray-300">{t("form_phone")}</label>
                   <input
                     type="tel"
                     id="phone"
                     className="w-full bg-white/5 border border-white/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-gold transition-all"
-                    placeholder="+977 98..."
+                    placeholder={t("ph_phone")}
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="service" className="text-sm font-semibold tracking-wider uppercase text-gray-300">Interested Service</label>
+                  <label htmlFor="service" className="text-sm font-semibold tracking-wider uppercase text-gray-300">{t("form_service")}</label>
                   <select
                     id="service"
                     className="w-full bg-white/5 border border-white/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-gold transition-all appearance-none"
                   >
-                    <option value="" className="bg-primary-navy">Select a service...</option>
-                    <option value="corporate" className="bg-primary-navy">Corporate Law</option>
+                    <option value="" className="bg-primary-navy">{t("ph_service")}</option>
+                    <option value="corporate" className="bg-primary-navy">{t("feat_rep")}</option>
                     <option value="criminal" className="bg-primary-navy">Criminal Defense</option>
                     <option value="family" className="bg-primary-navy">Family & Divorce</option>
                     <option value="real-estate" className="bg-primary-navy">Real Estate Law</option>
@@ -128,12 +128,12 @@ export default function Contact() {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-semibold tracking-wider uppercase text-gray-300">Case Details</label>
+                <label htmlFor="message" className="text-sm font-semibold tracking-wider uppercase text-gray-300">{t("form_details")}</label>
                 <textarea
                   id="message"
                   rows={4}
                   className="w-full bg-white/5 border border-white/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-gold transition-all resize-none"
-                  placeholder="Please briefly describe your legal matter..."
+                  placeholder={t("ph_details")}
                 ></textarea>
               </div>
 
@@ -141,7 +141,7 @@ export default function Contact() {
                 type="submit"
                 className="w-full bg-accent-gold hover:bg-yellow-600 text-white font-bold uppercase tracking-widest py-4 rounded-sm flex items-center justify-center transition-colors shadow-lg shadow-accent-gold/20"
               >
-                Submit Request
+                {t("form_submit")}
                 <Send className="ml-2 h-5 w-5" />
               </button>
             </form>

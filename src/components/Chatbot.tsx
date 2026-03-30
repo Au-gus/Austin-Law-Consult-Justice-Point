@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, User, Scale } from 'lucide-react';
+import { MessageCircle, X, Send, Scale } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 const botResponses: Record<string, Record<string, string>> = {
@@ -25,7 +25,7 @@ const botResponses: Record<string, Record<string, string>> = {
 };
 
 export default function Chatbot() {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{role: 'user' | 'bot', text: string}[]>([]);
   const [input, setInput] = useState('');
@@ -44,7 +44,6 @@ export default function Chatbot() {
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setInput('');
 
-    // Simple keyword matching for "Basic Question Bot"
     setTimeout(() => {
       let responseKey = "default";
       const lowered = userMsg.toLowerCase();
@@ -61,16 +60,14 @@ export default function Chatbot() {
 
   return (
     <>
-      {/* Floating Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 z-[60] h-14 w-14 bg-accent-gold text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all text-sm font-bold"
-        title="Open Legal Assistant"
+        title={t("search_close")}
       >
         {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-7 w-7" />}
       </button>
 
-      {/* Chat Window */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -79,7 +76,6 @@ export default function Chatbot() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             className="fixed bottom-24 right-6 z-[60] w-[350px] sm:w-[400px] h-[500px] bg-white dark:bg-primary-navy rounded-2xl shadow-3xl border border-gray-100 dark:border-white/10 flex flex-col overflow-hidden"
           >
-            {/* Header */}
             <div className="p-4 bg-primary-navy dark:bg-white/5 border-b border-white/10 flex items-center space-x-3">
               <div className="h-10 w-10 rounded-full bg-accent-gold flex items-center justify-center text-white">
                 <Scale className="h-5 w-5" />
@@ -90,7 +86,6 @@ export default function Chatbot() {
               </div>
             </div>
 
-            {/* Messages Area */}
             <div 
               ref={scrollRef}
               className="flex-grow p-4 overflow-y-auto space-y-4 custom-scrollbar bg-gray-50/50 dark:bg-transparent"
@@ -98,9 +93,7 @@ export default function Chatbot() {
               {messages.length === 0 && (
                 <div className="text-center py-10 px-6">
                   <p className="text-sm text-gray-500 italic">
-                    {language === 'en' 
-                      ? "Ask a basic question about legal procedures or our firm." 
-                      : "कानूनी प्रक्रियाहरू वा हाम्रो फर्मको बारेमा आधारभूत प्रश्न सोध्नुहोस्।"}
+                    {t("chat_welcome")}
                   </p>
                 </div>
               )}
@@ -117,12 +110,11 @@ export default function Chatbot() {
               ))}
             </div>
 
-            {/* Input Area */}
             <div className="p-4 border-t border-gray-100 dark:border-white/10">
               <div className="relative flex items-center">
                 <input
                   type="text"
-                  placeholder={language === 'en' ? "Message Austin Assistant..." : "सदेश लेख्नुहोस्..."}
+                  placeholder={t("chat_input_ph")}
                   className="w-full bg-gray-100 dark:bg-white/5 border-none rounded-full px-4 py-3 pr-12 text-sm focus:ring-1 focus:ring-accent-gold dark:text-white"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
@@ -136,7 +128,7 @@ export default function Chatbot() {
                 </button>
               </div>
               <p className="text-[9px] text-center text-gray-400 mt-3 italic uppercase tracking-tighter">
-                {language === 'en' ? "Information Only • No Legal Advice" : "जानकारी मात्र • कुनै कानूनी सल्लाह होइन"}
+                {t("chat_disclaimer_title")} • {t("chat_disclaimer_text")}
               </p>
             </div>
           </motion.div>

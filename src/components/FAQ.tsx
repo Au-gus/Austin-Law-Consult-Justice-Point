@@ -49,7 +49,7 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -59,16 +59,14 @@ export default function FAQ() {
           <div className="inline-flex items-center space-x-2 bg-accent-gold/10 px-4 py-2 rounded-full mb-4">
             <HelpCircle className="h-4 w-4 text-accent-gold" />
             <span className="text-accent-gold text-xs font-bold uppercase tracking-widest italic">
-              {language === 'en' ? 'Common Inquiries' : 'सामान्य सोधपुछ'}
+              {t("faq_badge")}
             </span>
           </div>
           <h2 className="heading-serif text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            {language === 'en' ? 'Informational Portal FAQ' : 'जानकारीमूलक पोर्टल FAQ'}
+            {t("faq_title")}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            {language === 'en' 
-              ? "General guidance on common legal procedures and the regulatory framework of Nepal." 
-              : "नेपालको सामान्य कानूनी प्रक्रियाहरू र नियामक ढाँचाको बारेमा सामान्य मार्गनिर्देशन।"}
+            {t("faq_desc")}
           </p>
         </div>
 
@@ -113,9 +111,7 @@ export default function FAQ() {
         
         <div className="mt-12 text-center">
           <p className="text-sm text-gray-500 italic">
-            {language === 'en' 
-              ? "Cannot find your inquiry? Feel free to send a professional inquiry through our contact form." 
-              : "तपाईंको सोधपुछ फेला परेन? हाम्रो सम्पर्क फारम मार्फत व्यावसायिक सोधपुछ पठाउन सक्नुहुन्छ।"}
+            {t("faq_footer")}
           </p>
         </div>
       </div>

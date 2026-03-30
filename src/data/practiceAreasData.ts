@@ -1,88 +1,118 @@
 export interface PracticeArea {
   slug: string;
-  title: string;
-  description: string;
-  validity: string;
-  detailedContent: string[];
+  title: { en: string; ne: string };
+  description: { en: string; ne: string };
+  validity: { en: string; ne: string };
+  detailedContent: { en: string; ne: string }[];
 }
 
 export const practiceAreasData: PracticeArea[] = [
   {
     slug: "corporate-law",
-    title: "Corporate Law",
-    description: "Comprehensive legal counsel for businesses, from incorporation to complex mergers and acquisitions.",
-    validity: "Governed primarily by the Companies Act, 2063 (2006) and the Industrial Enterprises Act, 2076 (2020) of Nepal.",
+    title: { en: "Corporate Law", ne: "कर्पोरेट कानून" },
+    description: { 
+      en: "Comprehensive legal counsel for businesses, from incorporation to complex mergers and acquisitions.", 
+      ne: "कम्पनी दर्ता देखि जटिल मर्जर र एक्विजिसन सम्मका व्यवसायहरूका लागि व्यापक कानूनी परामर्श।" 
+    },
+    validity: {
+      en: "Governed primarily by the Companies Act, 2063 (2006) and the Industrial Enterprises Act, 2076 (2020) of Nepal.",
+      ne: "मुख्यतया नेपालको कम्पनी ऐन, २०६३ र औद्योगिक व्यवसाय ऐन, २०७६ द्वारा निर्देशित।"
+    },
     detailedContent: [
-      "Company registration and structural compliance with the Office of the Company Registrar (OCR).",
-      "Drafting and reviewing Articles of Association and Memorandum of Association.",
-      "Advice on Foreign Direct Investment (FDI) regulations and approvals from the Department of Industries (DOI).",
-      "Corporate governance, shareholder agreements, and dispute resolution.",
-      "Regulatory compliance with the Securities Board of Nepal (SEBON) for listed companies."
+      { en: "Company registration and structural compliance with the OCR.", ne: "कम्पनी रजिष्ट्रारको कार्यालय (OCR) मा कम्पनी दर्ता र संरचनात्मक अनुपालन।" },
+      { en: "Drafting Articles of Association and Memorandum of Association.", ne: "प्रबन्धपत्र र नियमावलीको मस्यौदा तयार गर्ने।" },
+      { en: "Advice on Foreign Direct Investment (FDI) regulations.", ne: "वैदेशिक प्रत्यक्ष लगानी (FDI) नियम र स्वीकृति सम्बन्धी सल्लाह।" },
+      { en: "Corporate governance and shareholder agreements.", ne: "कर्पोरेट सुशासन र शेयरधनी सम्झौताहरू।" }
     ]
   },
   {
     slug: "criminal-defense",
-    title: "Criminal Defense",
-    description: "Legal representation and consultancy for criminal proceedings and defense matters.",
-    validity: "Based on the National Penal (Code) Act, 2074 (2017) and National Criminal Procedure (Code) Act, 2074 (2017) of Nepal.",
+    title: { en: "Criminal Defense", ne: "फौजदारी रक्षा" },
+    description: { 
+      en: "Legal representation and consultancy for criminal proceedings and defense matters.", 
+      ne: "फौजदारी कार्यवाही र रक्षा मामिलाहरूको लागि कानूनी प्रतिनिधित्व र परामर्श।" 
+    },
+    validity: {
+      en: "Based on the National Penal (Code) Act, 2074 and Criminal Procedure Act, 2074.",
+      ne: "मुलुकी अपराध (संहिता) ऐन, २०७४ र मुलुकी फौजदारी कार्यविधि (संहिता) ऐन, २०७४ मा आधारित।"
+    },
     detailedContent: [
-      "Defense against white-collar crimes, fraud, and financial irregularities.",
-      "Representation in District Courts, High Courts, and the Supreme Court of Nepal.",
-      "Legal assistance during police investigations and custody.",
-      "Bail applications and petitioning for the 'Writ of Habeas Corpus' when necessary.",
-      "Expertise in cybercrime cases under the Electronic Transactions Act, 2063."
+      { en: "Defense against white-collar crimes and fraud.", ne: "सेतोपोश अपराध र ठगी विरुद्ध रक्षा।" },
+      { en: "Representation in District, High, and Supreme Courts.", ne: "जिल्ला, उच्च र सर्वोच्च अदालतहरूमा प्रतिनिधित्व।" },
+      { en: "Legal assistance during police investigations.", ne: "प्रहरी अनुसन्धानको क्रममा कानूनी सहायता।" },
+      { en: "Bail applications and Habeas Corpus petitions.", ne: "जमानत आवेदन र बन्दी प्रत्यक्षीकरण रिटहरू।" }
     ]
   },
   {
     slug: "family-divorce",
-    title: "Family & Divorce",
-    description: "Guidance and representation for family-related legal matters and matrimonial proceedings.",
-    validity: "Regulated by the National Civil (Code) Act, 2074 (2017) under the 'Family Law' section of Nepal.",
+    title: { en: "Family & Divorce", ne: "पारिवारिक र सम्बन्धविच्छेद" },
+    description: { 
+      en: "Guidance and representation for family-related legal matters and matrimonial proceedings.", 
+      ne: "परिवारसँग सम्बन्धित कानूनी मामिलाहरू र वैवाहिक कार्यवाहीका लागि मार्गदर्शन र प्रतिनिधित्व।" 
+    },
+    validity: {
+      en: "Regulated by the National Civil (Code) Act, 2074 under Family Law.",
+      ne: "मुलुकी देवानी (संहिता) ऐन, २०७४ को 'पारिवारिक कानून' अन्तर्गत विनियमित।"
+    },
     detailedContent: [
-      "Divorce proceedings (mutual consent and contested) and property division.",
-      "Child custody, maintenance, and guardianship disputes.",
-      "Legalization of marriages and registration processes.",
-      "Adoption laws and international adoption compliance.",
-      "Inheritance and partition of ancestral property (Ansha-Banda)."
+      { en: "Divorce proceedings and property division.", ne: "सम्बन्धविच्छेदको कार्यवाही र अंशबण्डा।" },
+      { en: "Child custody and guardianship disputes.", ne: "बच्चाको जिम्मा र संरक्षण सम्बन्धी विवादहरू।" },
+      { en: "Legalization of marriages and registration.", ne: "विवाहको वैधानिकता र दर्ता।" },
+      { en: "Inheritance and partition of ancestral property.", ne: "अपुताली र पैतृक सम्पत्तिको अंशबण्डा।" }
     ]
   },
   {
     slug: "real-estate-law",
-    title: "Real Estate Law",
-    description: "Facilitation and consultancy for property transactions, land registration, and related disputes.",
-    validity: "Governed by the Land Act, 2021 (1964) and the National Civil (Code) Act, 2074 (2017) of Nepal.",
+    title: { en: "Real Estate Law", ne: "घरजग्गा कानून" },
+    description: { 
+      en: "Facilitation for property transactions, land registration, and related disputes.", 
+      ne: "सम्पत्ति कारोबार, जग्गा दर्ता, र सम्बन्धित विवादहरूको लागि सहजीकरण।" 
+    },
+    validity: {
+      en: "Governed by the Land Act, 2021 and National Civil (Code) Act, 2074.",
+      ne: "जग्गा प्राप्ति ऐन, २०२१ र मुलुकी देवानी (संहिता) ऐन, २०७४ द्वारा निर्देशित।"
+    },
     detailedContent: [
-      "Due diligence for land purchase and ownership verification (Lal-Purja).",
-      "Drafting sale-purchase agreements and registration at the Land Revenue Office (Malpot).",
-      "Dispute resolution regarding land boundaries, encroachment, and tenancy rights.",
-      "Lease agreements for commercial and residential properties.",
-      "Legal advice on apartment/condominium ownership and joint housing projects."
+      { en: "Due diligence for land purchase (Lal-Purja).", ne: "जग्गा खरीदको लागि कानूनी जाँच (लालपुर्जा)।" },
+      { en: "Sale-purchase agreements and Malpot registration.", ne: "खरीद-बिक्री सम्झौता र मालपोत दर्ता।" },
+      { en: "Dispute resolution regarding boundaries and tenancy.", ne: "जग्गाको सिमाना र मोहियानी सम्बन्धी विवाद समाधान।" },
+      { en: "Legal advice on apartment/condominium ownership.", ne: "अपार्टमेन्ट/कोलोनी स्वामित्व सम्बन्धी कानूनी सल्लाह।" }
     ]
   },
   {
     slug: "banking-finance",
-    title: "Banking & Finance",
-    description: "Navigating regulatory landscapes and consultancy for structural financing and banking law.",
-    validity: "Compliance with the Bank and Financial Institutions Act (BAFIA), 2073 and Nepal Rastra Bank directives.",
+    title: { en: "Banking & Finance", ne: "बैंकिङ र वित्त" },
+    description: { 
+      en: "Navigating regulatory landscapes and consultancy for structural financing.", 
+      ne: "नियमनकारी परिदृश्य र संरचनात्मक वित्तिय परामर्श।" 
+    },
+    validity: {
+      en: "Compliance with BAFIA, 2073 and NRB directives.",
+      ne: "बाफिया (BAFIA), २०७३ र नेपाल राष्ट्र बैंकका निर्देशनहरूको अनुपालन।"
+    },
     detailedContent: [
-      "Loan documentation, security creation, and mortgage registration.",
-      "Debt recovery and representation in the Debt Recovery Tribunal (DRT).",
-      "Compliance audits for banks and financial institutions.",
-      "Advice on foreign exchange regulations and banking licenses.",
-      "Legal structural advice for fintech startups and digital payment gateways."
+      { en: "Loan documentation and security creation.", ne: "कर्जा कागजात र सुरक्षण सिर्जना।" },
+      { en: "Debt recovery and DRT representation.", ne: "कर्जा असुली र ऋण असुली न्यायाधिकरण (DRT) प्रतिनिधित्व।" },
+      { en: "Compliance audits for financial institutions.", ne: "वित्तीय संस्थाहरूको लागि अनुपालन अडिट।" },
+      { en: "Advice on foreign exchange regulations.", ne: "विदेशी विनिमय नियमहरू सम्बन्धी सल्लाह।" }
     ]
   },
   {
     slug: "intellectual-property",
-    title: "Intellectual Property",
-    description: "Consultancy for safeguarding innovations, trademarks, and creative assets under registration.",
-    validity: "Regulated under the Patent, Design and Trademark Act, 2022 (1965) and the Copyright Act, 2059 (2002) of Nepal.",
+    title: { en: "Intellectual Property", ne: "बौद्धिक सम्पत्ति" },
+    description: { 
+      en: "Safeguarding innovations, trademarks, and creative assets.", 
+      ne: "नयाँ आविष्कार, ट्रेडमार्क र रचनात्मक सम्पत्तिको सुरक्षा।" 
+    },
+    validity: {
+      en: "Regulated under PTDA, 2022 and Copyright Act, 2059.",
+      ne: "प्याटेन्ट, डिजाइन र ट्रेडमार्क ऐन, २०२२ र प्रतिलिपि अधिकार ऐन, २०५९ अन्तर्गत विनियमित।"
+    },
     detailedContent: [
-      "Trademark registration and protection against 'passing off'.",
-      "Copyright registration for literary, artistic, and musical works.",
-      "Patent filings for industrial innovations and technical designs.",
-      "IP litigation and enforcement against counterfeiting.",
-      "Drafting licensing and franchising agreements for domestic and international brands."
+      { en: "Trademark registration and protection.", ne: "ट्रेडमार्क दर्ता र सुरक्षा।" },
+      { en: "Copyright registration for artistic works.", ne: "कलात्मक कार्यहरूको लागि प्रतिलिपि अधिकार दर्ता।" },
+      { en: "Patent filings for industrial innovations.", ne: "औद्योगिक आविष्कारहरूको लागि प्याटेन्ट दर्ता।" },
+      { en: "Drafting licensing and franchising agreements.", ne: "लाइसेन्सिङ र फ्रेन्चाइजिङ सम्झौताहरूको मस्यौदा।" }
     ]
   }
 ];

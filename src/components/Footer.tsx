@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { Scale, MapPin, Phone, Mail, Clock, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-primary-navy text-gray-300 border-t border-white/10 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,7 +26,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
-              Austin Law Consult & Justice Point is a premier corporate and commercial law firm providing specialized legal services across Nepal. We are dedicated to delivering proactive, innovative, and strategic solutions.
+              {t("nav_tagline")} is a premier corporate and commercial law firm providing specialized legal services across Nepal. We are dedicated to delivering proactive, innovative, and strategic solutions.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent-gold hover:text-white transition-colors duration-300 text-sm font-bold uppercase tracking-wider">
@@ -43,16 +48,15 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold heading-serif text-lg mb-6 flex items-center">
               <span className="w-8 h-[2px] bg-accent-gold mr-3 inline-block"></span>
-              Quick Links
+              {t("footer_quick_links")}
             </h3>
             <ul className="space-y-3">
               {[
-                { name: "Home", href: "/" },
-                { name: "About Us", href: "/#about" },
-                { name: "Practice Areas", href: "/#practice-areas" },
-                { name: "Our Attorneys", href: "/#attorneys" },
-                { name: "Legal Blog", href: "/#blog" },
-                { name: "Contact Us", href: "/#contact" },
+                { name: t("nav_about"), href: "/#about" },
+                { name: t("nav_practice"), href: "/#practice-areas" },
+                { name: t("nav_attorneys"), href: "/#attorneys" },
+                { name: t("nav_blog"), href: "/#blog" },
+                { name: t("nav_contact"), href: "/#contact" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="flex items-center text-gray-400 hover:text-accent-gold transition-colors text-sm group">
@@ -68,7 +72,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold heading-serif text-lg mb-6 flex items-center">
               <span className="w-8 h-[2px] bg-accent-gold mr-3 inline-block"></span>
-              Practice Areas
+              {t("footer_practice_areas")}
             </h3>
             <ul className="space-y-3">
               {[
@@ -93,7 +97,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold heading-serif text-lg mb-6 flex items-center">
               <span className="w-8 h-[2px] bg-accent-gold mr-3 inline-block"></span>
-              Contact Info
+              {t("footer_contact_info")}
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start">
@@ -131,8 +135,8 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="bg-white/5 p-6 rounded-sm border border-white/5">
             <p className="text-[10px] md:text-xs text-gray-500 text-center leading-relaxed uppercase tracking-wider">
-              <span className="font-bold text-accent-gold block mb-2 underline decoration-accent-gold/30 underline-offset-4">Legal Notice & Disclaimer</span>
-              This profile is maintained for informational purposes only in accordance with the Code of Conduct for Legal Practitioners in Nepal. 
+              <span className="font-bold text-accent-gold block mb-2 underline decoration-accent-gold/30 underline-offset-4">{t("footer_disclaimer_title")}</span>
+              {t("footer_disclaimer_text")}
               The content provided on this website does not constitute an advertisement, solicitation, or legal advice. 
               Accessing this profile does not create a lawyer-client relationship. Visitors are requested to seek 
               formal legal counsel for specific legal matters.
@@ -140,7 +144,7 @@ export default function Footer() {
           </div>
           
           <div className="mt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[10px] text-gray-500 uppercase tracking-widest">
-            <p>&copy; {new Date().getFullYear()} Austin Law Consult & Justice Point. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} {t("nav_tagline")}. All rights reserved.</p>
             <div className="flex space-x-6">
               <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>

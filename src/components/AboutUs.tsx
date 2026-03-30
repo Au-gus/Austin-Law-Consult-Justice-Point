@@ -21,7 +21,6 @@ export default function AboutUs() {
             className="relative"
           >
             <div className="relative h-[600px] w-full rounded-sm overflow-hidden bg-primary-navy shadow-2xl flex items-center justify-center">
-              {/* Stylized SVG 'Legal Library' Placeholder */}
               <div className="absolute inset-0 opacity-20">
                 <svg viewBox="0 0 400 600" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M50 100 H350 V120 H50 Z" fill="#D4AF37"/>
@@ -40,12 +39,11 @@ export default function AboutUs() {
               <div className="relative z-10 flex flex-col items-center text-center px-12">
                 <Scale className="h-24 w-24 text-accent-gold/40 mb-6" />
                 <h4 className="heading-serif text-3xl font-bold text-white/60 mb-4">Integrity in Practice</h4>
-                <p className="text-white/40 text-sm uppercase tracking-[0.2em]">Austin Law Consult & Justice Point</p>
+                <p className="text-white/40 text-sm uppercase tracking-[0.2em]">{t("nav_tagline")}</p>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </div>
             
-            {/* Experience Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -53,8 +51,8 @@ export default function AboutUs() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="absolute -bottom-8 -right-8 bg-accent-gold p-8 text-white max-w-[200px] shadow-xl hidden md:block"
             >
-              <h4 className="text-5xl font-bold heading-serif mb-2">20+</h4>
-              <p className="text-sm font-bold uppercase tracking-wider">Years of Legal Experience</p>
+              <h4 className="text-5xl font-bold heading-serif mb-2">{t("about_exp_years")}</h4>
+              <p className="text-sm font-bold uppercase tracking-wider">{t("about_exp_title")}</p>
             </motion.div>
           </motion.div>
 
@@ -86,10 +84,10 @@ export default function AboutUs() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-6">
               {[
-                "Professional Expertise",
-                "Factual Legal Advice",
-                "Strategic Consultancy",
-                "Objective Representation",
+                t("about_feat1"),
+                t("about_feat2"),
+                t("about_feat3"),
+                t("about_feat4"),
               ].map((item, index) => (
                 <div key={index} className="flex items-center space-x-3 text-gray-800 dark:text-gray-200">
                   <CheckCircle2 className="h-5 w-5 text-accent-gold shrink-0" />
@@ -106,7 +104,7 @@ export default function AboutUs() {
               </div>
               <div>
                 <h5 className="font-bold heading-serif text-xl text-gray-900 dark:text-white">Ram KC</h5>
-                <p className="text-accent-gold text-sm font-semibold uppercase tracking-wider">Managing Director — 20+ Yrs Experience</p>
+                <p className="text-accent-gold text-sm font-semibold uppercase tracking-wider">{t("about_director_role")}</p>
               </div>
             </div>
           </motion.div>

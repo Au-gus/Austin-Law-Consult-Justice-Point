@@ -1,3 +1,5 @@
+"use client";
+
 import { notFound } from "next/navigation";
 import { CheckCircle2, Scale, ShieldCheck, Landmark } from "lucide-react";
 import { practiceAreasData } from "@/data/practiceAreasData";
@@ -6,9 +8,11 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PrintButton from "@/components/PrintButton";
 import React from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
-export default async function PracticeAreaDetail({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default function PracticeAreaDetail({ params }: { params: { slug: string } }) {
+  const { t, language } = useLanguage();
+  const { slug } = params;
   const practice = practiceAreasData.find((p) => p.slug === slug);
 
   if (!practice) {
@@ -22,18 +26,18 @@ export default async function PracticeAreaDetail({ params }: { params: Promise<{
       <main className="flex-grow pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[
-            { label: { en: "Practice Areas", ne: "कार्यक्षेत्र" }, href: "/#practice-areas" },
-            { label: practice.title }
+            { label: t("nav_practice"), href: "/#practice-areas" },
+            { label: practice.title[language] }
           ]} />
           
           <div className="flex justify-between items-end mb-12 flex-wrap gap-4">
             <div className="max-w-3xl">
               <h1 className="heading-serif text-5xl md:text-7xl font-bold text-primary-navy dark:text-white mb-6">
-                {practice.title}
+                {practice.title[language]}
               </h1>
               <div className="w-24 h-1.5 bg-accent-gold mb-8"></div>
               <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed font-light">
-                {practice.description}
+                {practice.description[language]}
               </p>
             </div>
             <PrintButton />
@@ -43,8 +47,8 @@ export default async function PracticeAreaDetail({ params }: { params: Promise<{
             <div className="lg:col-span-2 space-y-12">
               <div id="print-content">
                 <div className="hidden print:block mb-8 border-b-2 border-primary-navy pb-4">
-                   <h1 className="text-2xl font-bold text-primary-navy uppercase tracking-tight">Austin Law Consult & Justice Point</h1>
-                   <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">Practice Area Factsheet: {practice.title}</p>
+                   <h1 className="text-2xl font-bold text-primary-navy uppercase tracking-tight">{t("nav_tagline")}</h1>
+                   <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">Practice Area Factsheet: {practice.title[language]}</p>
                 </div>
 
                 <h2 className="heading-serif text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
@@ -56,7 +60,7 @@ export default async function PracticeAreaDetail({ params }: { params: Promise<{
                     <div key={i} className="flex items-start p-6 bg-gray-50 dark:bg-gray-800/30 rounded-sm border-l-4 border-accent-gold">
                       <CheckCircle2 className="h-5 w-5 text-accent-gold mt-1 mr-3 shrink-0" />
                       <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                        {item}
+                        {item[language]}
                       </p>
                     </div>
                   ))}
@@ -69,7 +73,7 @@ export default async function PracticeAreaDetail({ params }: { params: Promise<{
                   Professional Standards
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed italic">
-                  At Austin Law Consult & Justice Point, we provide consultancy in {practice.title} matters with a focus on objective legal analysis and structural compliance. Our profile is dedicated to supporting the rule of law and providing transparent legal information within the Nepali regulatory framework.
+                  At {t("nav_tagline")}, we provide consultancy in {practice.title[language]} matters with a focus on objective legal analysis and structural compliance.
                 </p>
               </div>
             </div>
@@ -81,7 +85,7 @@ export default async function PracticeAreaDetail({ params }: { params: Promise<{
                   Regulatory Context
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                  {practice.validity}
+                  {practice.validity[language]}
                 </p>
                 <div className="h-px bg-white/10 w-full mb-6"></div>
                 <p className="text-[10px] uppercase tracking-widest text-accent-gold font-bold mb-2">Legal Precedent</p>
@@ -97,10 +101,4 @@ export default async function PracticeAreaDetail({ params }: { params: Promise<{
       <Footer />
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  return practiceAreasData.map((p) => ({
-    slug: p.slug,
-  }));
 }
