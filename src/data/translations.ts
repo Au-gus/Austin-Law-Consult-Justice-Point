@@ -129,8 +129,11 @@ export const translations = {
     attorney_photo_private: "Photo Private",
     attorney_senior: "Senior Advocate",
     attorney_junior: "Junior Advocate",
+    attorney_assistant: "Legal Assistant",
+    attorney_investigator: "Legal Investigator",
     attorney_md: "Managing Director",
     attorney_name_withheld: "Advocate (Name Withheld)",
+    attorney_team_member: "Team Member (Name Withheld)",
   },
   ne: {
     // Navbar
@@ -262,7 +265,10 @@ export const translations = {
     attorney_photo_private: "तस्विर गोप्य",
     attorney_senior: "वरिष्ठ अधिवक्ता",
     attorney_junior: "कनिष्ठ अधिवक्ता",
+    attorney_assistant: "कानूनी सहायक",
+    attorney_investigator: "कानूनी अनुसन्धानकर्ता",
     attorney_md: "प्रबन्ध निर्देशक",
     attorney_name_withheld: "अधिवक्ता (नाम गोप्य)",
+    attorney_team_member: "टोली सदस्य (नाम गोप्य)",
   }
 };

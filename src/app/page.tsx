@@ -98,7 +98,7 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden md:flex flex-col items-center animate-bounce text-white/50">
-          <span className="text-xs uppercase tracking-[0.2em] mb-2 font-semibold">Scroll</span>
+          <span className="text-xs uppercase tracking-[0.2em] mb-2 font-semibold">{t("hero_scroll")}</span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
         </div>
       </section>
