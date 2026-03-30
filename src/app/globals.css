@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary-navy: #12182B;
+  --color-dark-neutral: #101010;
+  --color-accent-gold: #EDB970;
+  --color-text-main: #F8F8F8;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-montserrat);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #101010;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #12182B;
+    --foreground: #F8F8F8;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* Custom Utilities for law firm site */
+.text-gold {
+  color: var(--color-accent-gold);
+}
+.bg-gold {
+  background-color: var(--color-accent-gold);
+}
+.border-gold {
+  border-color: var(--color-accent-gold);
+}
+.heading-serif {
+  font-family: var(--font-serif), serif;
+}
