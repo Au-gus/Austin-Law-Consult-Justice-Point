@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { Scale, MapPin, Phone, Mail, Clock, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { practiceAreasData } from "@/data/practiceAreasData";
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="bg-primary-navy text-gray-300 border-t border-white/10 pt-16 pb-8">

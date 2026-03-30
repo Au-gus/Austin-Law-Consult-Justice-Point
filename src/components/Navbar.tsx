@@ -49,7 +49,7 @@ export default function Navbar() {
               <Scale className={`h-8 w-8 transition-colors duration-300 ${scrolled ? "text-accent-gold" : "text-white group-hover:text-accent-gold"}`} />
               <div className="flex flex-col">
                 <span className={`heading-serif font-bold text-xl leading-none transition-colors duration-300 ${scrolled ? "text-primary-navy dark:text-white" : "text-white"}`}>
-                  AUSTIN LAW
+                  {t("nav_logo_main")}
                 </span>
                 <span className={`text-[0.55rem] tracking-[0.1em] font-bold uppercase transition-colors duration-300 ${scrolled ? "text-accent-gold" : "text-accent-gold/80"}`}>
                   {t("nav_tagline")}
@@ -149,7 +149,7 @@ export default function Navbar() {
                   className="flex items-center space-x-3 w-full px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
                 >
                   <Search className="h-5 w-5 text-accent-gold" />
-                  <span className="font-medium">Search Portal</span>
+                  <span className="font-medium">{t("nav_search_portal")}</span>
                 </button>
                 <Link
                   href="/#contact"
