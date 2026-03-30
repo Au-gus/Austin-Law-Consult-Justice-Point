@@ -264,7 +264,7 @@ export const translations = {
     nav_search_portal: "पोर्टल खोज्नुहोस्",
     attorney_photo_private: "तस्विर गोप्य",
     attorney_senior: "वरिष्ठ अधिवक्ता",
-    attorney_junior: "कनिष्ठ अधिवक्ता",
+    attorney_junior: "अधिवक्ता",
     attorney_assistant: "कानूनी सहायक",
     attorney_investigator: "कानूनी अनुसन्धानकर्ता",
     attorney_md: "प्रबन्ध निर्देशक",
